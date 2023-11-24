@@ -15,7 +15,7 @@ def create_Generate_Image_Disease_tab():
             prompt_en = GoogleTranslator(source='vietnamese', target='english').translate(prompt)
 
             # Generate images from the model
-            images = pipe(prompt=prompt_en).images[0]
+            images = pipe(prompt=prompt_en, num_inference_steps=25).images[0]
 
             return images
 
